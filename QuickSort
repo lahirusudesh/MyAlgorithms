@@ -1,3 +1,4 @@
+// Java program for implementation of QuickSort 
 class QuickSort 
 { 
 	int partition(int arr[], int low, int high) 
@@ -5,18 +6,20 @@ class QuickSort
 		int i = low;
 		int j = high -1;
 		int pivot = arr[high]; 
-		while(i<j){
+		while(i<=j){
 			while(pivot > arr[i]){
 				i++;
 			}
-			while(pivot <= arr[j]){
+			while(pivot < arr[j]){
 				j--;
 			}
-			if(i<j){
-			int temp = arr[i]; 
-			arr[i] = arr[j]; 
-			arr[j] = temp;
-		}
+			if(i<=j){
+				int temp = arr[i]; 
+				arr[i] = arr[j]; 
+				arr[j] = temp;
+				i++;
+				j--;
+			}
 		}
 		int temp = arr[i]; 
 		arr[i] = arr[high]; 
@@ -24,6 +27,7 @@ class QuickSort
 
 		return i; 
 	} 
+
 
 	void sort(int arr[], int low, int high) 
 	{ 
@@ -34,7 +38,7 @@ class QuickSort
 		}
 	} 
 
-
+	/* A utility function to print array of size n */
 	static void printArray(int arr[]) 
 	{ 
 		int n = arr.length; 
@@ -43,9 +47,10 @@ class QuickSort
 		System.out.println(); 
 	} 
 
+	// Driver program 
 	public static void main(String args[]) 
 	{ 
-		int arr[] = {15, 28, 18, 10,10, 7, 8, 9, 1, 5}; 
+		int arr[] = {1,2,3,4,5,6,7,8,9}; 
 		int n = arr.length; 
 
 		QuickSort ob = new QuickSort(); 
