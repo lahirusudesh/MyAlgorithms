@@ -10,7 +10,7 @@ class QuickSort
 			while(pivot > arr[i]){
 				i++;
 			}
-			while(pivot < arr[j]){
+			while(j>=0 && pivot < arr[j]){
 				j--;
 			}
 			if(i<=j){
@@ -34,7 +34,7 @@ class QuickSort
 		if(low<high){
 		int pi = partition(arr, low, high); 
 		sort(arr, low, pi-1); 
-		sort(arr, pi+1, high); 
+		sort(arr, pi, high); 
 		}
 	} 
 
@@ -50,7 +50,7 @@ class QuickSort
 	// Driver program 
 	public static void main(String args[]) 
 	{ 
-		int arr[] = {1,2,3,4,5,6,7,8,9}; 
+		int arr[] = {9,8,7,6,5,4,3,2,1}; 
 		int n = arr.length; 
 
 		QuickSort ob = new QuickSort(); 
@@ -60,4 +60,3 @@ class QuickSort
 		printArray(arr); 
 	} 
 } 
-
